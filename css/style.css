@@ -1,0 +1,97 @@
+@font-face {
+    font-family: PB;
+    src: url("../fonts/Proxima Nova Bold.otf");
+}
+@font-face {
+    font-family: PR;
+    src: url("../fonts/Proxima Nova Regular.otf");
+}
+svg {
+    display: block;
+    margin: 0 auto;
+}
+text {
+    text-anchor: middle;
+}
+.circle-text {
+    font-family: PB;
+    font-size: 14px;
+}
+.top-text,
+.arc-text {
+    font-family: PR;
+    font-size: 12px;
+    fill: gray;
+}
+.tooltip-text {
+    font-family: PR;
+    font-size: 12px;
+    fill: gray;
+}
+.tooltip-text.anchor-start {
+    text-anchor: start;
+}
+.tooltip-text.anchor-end {
+    text-anchor: end;
+}
+.small-text {
+    font-size: 10px;
+}
+.bottom-tooltip {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.circle-element {
+    transition: transform 1s ease-in;
+}
+.sector {
+    opacity: 0.7;
+}
+.big-circle:hover .sector {
+    opacity: 1;
+}
+line:not(.bottom-line) {
+    stroke: lightgray;
+    stroke-width: 1;
+    shape-rendering: crispEdges
+}
+.bottom-line {
+    stroke-width: 4;
+}
+.circle-radius {
+    transition: r 0.3s ease-in-out;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+@keyframes rotated {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.big-circle:not(.explosive):hover {
+    transform-origin: center;
+    animation-name: pulse;
+    animation-duration: .4s;
+    animation-fill-mode: both;
+}
+.bottom-arc {
+    stroke-width: 1;
+    stroke: lightgray;
+    stroke-linecap: round;
+    fill: none;
+}
